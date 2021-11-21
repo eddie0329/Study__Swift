@@ -55,3 +55,87 @@ var temp: [Int] = []
 
 temp.append(1)
 temp.append(2)
+
+
+var name: String? = "Eddie"
+
+print(name)
+print(name!)
+
+if let tempName = name {
+  print(tempName)
+} else {
+  // .. 값이 추출 안되면..
+}
+
+func test() {
+  let number: Int? = nil;
+  guard let result = number else { return }
+  print(result)
+}
+
+test()
+
+let value: Int? = 4
+
+if value == 4  {
+  print("HELLO")
+} else {
+  print("NOT HELLO")
+}
+
+struct User {
+  var nickname: String
+  var age: Int
+  
+  init(age: Int) {
+    self.nickname = "eddie"
+    self.age = age
+  }
+  
+  func information() {
+    print("\(nickname) \(age)")
+  }
+}
+
+//var user = User(nickname: "Eddie", age: 11)
+//user.nickname
+//user.age
+//user.age = 100
+//user.age
+//
+//user.information()
+
+var user2 = User(age: 11)
+user2.age
+
+class Dog {
+  var name: String = ""
+  var age: Int = 0
+  
+  init() {}
+  
+  init(name: String, age: Int) {
+    self.name = name
+    self.age = age
+  }
+ 
+  func introduce() {
+    print("name: \(name), age: \(age)")
+  }
+  
+  deinit {
+    print("deint dog")
+  }
+}
+
+var dog = Dog(name: "Kadon", age: 100)
+dog.name
+dog.age
+dog.name = "Coco"
+dog.age = 3
+dog.name
+dog.age
+dog.introduce()
+var dog2: Dog? = Dog()
+dog2 = nil
