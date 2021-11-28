@@ -139,3 +139,118 @@ dog.age
 dog.introduce()
 var dog2: Dog? = Dog()
 dog2 = nil
+
+
+struct Cat {
+  static var breed: Bool = true
+  var name: String = "Claire" {
+    willSet {
+      print("willset: \(newValue)")
+    }
+    didSet {
+      print("didSet: \(oldValue)")
+    }
+  }
+  let gender: String
+    
+  var information: String {
+    get {
+      return "\(name) \(gender) !!  "
+    }
+    set (newName) {
+      name = newName
+    }
+  }
+}
+
+//var cat = Cat(name: "Sam", gender: "Male")
+//cat.information
+//cat.information = "Eddie"
+//cat.information
+
+Cat.breed
+
+func guardTest(value: Int) {
+  guard value == 0 else { return }
+  print("HELLO WORLD")
+}
+
+guardTest(value: 0) // HELLO WORLD
+guardTest(value: 1)
+
+func guardTest2(value: Int?) {
+  guard let value = value else { return }
+  print(value)
+}
+
+guardTest2(value: 2) // 2
+guardTest2(value: nil)
+
+
+//protocol SomeProtocol1 {
+//
+//}
+//
+//protocol SomeProtocol2 {
+//
+//}
+//
+//struct SomeStruct: SomeProtocol1, SomeProtocol2 {
+//
+//}
+//
+//protocol FirstProtocol {
+//  var name: Int { get set } // readble, writable
+//  var age: Int { get } // readable
+//}
+//
+//protocol SecondProtocol {
+//  static var someTypeProperty: Int { get set }
+//}
+
+protocol FullyNames {
+  var fullName: String { get set }
+  init(age: Int, fullName: String)
+  func printFullName()
+}
+
+struct Person: FullyNames {
+  var fullName: String
+  var age: Int
+  func  printFullName() {
+    print(fullName)
+  }
+  init(age: Int, fullName: String) {
+    self.age = age
+    self.fullName = fullName
+  }
+}
+
+var person = Person(age: 10, fullName: "Eddie Choi")
+person.printFullName()
+person.fullName = "Sam Choi"
+person.printFullName()
+
+
+//
+//class SomeSuperClass {
+//
+//}
+//
+//class SomeClass: SomeSuperClass, FirstProtocol, SecondProtocol {
+//
+//}
+
+protocol SomeProtocol5 {
+  init()
+}
+
+class SomeClass  {
+  required init () {
+    
+  }
+}
+
+
+
+
