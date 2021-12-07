@@ -1,5 +1,8 @@
 import UIKit
 
-var str = "Hello, playground"
+var temp: Int? = nil
 
-print(str);
+if let temp2 = temp {
+    print(temp2)
+}
+
